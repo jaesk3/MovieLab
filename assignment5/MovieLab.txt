@@ -1,0 +1,13 @@
+// Jae Kim
+// 12/2/17
+// Assignment5
+// MovieLab.txt
+
+This assignment consists of producing a video by using the data structure double linked list to store the frames. We also had to modify our double linked list in functions such as 'CropImageList' and 'FastImageList'. It was crucial to make sure that I had pointers pointing to the entries that I am trying to modify or access. I also had to make sure that there are no dangling pointers before freeing the memories that I allocated. Another challenge was dealing with command line arguments because it was my first time using it. 
+For the 'Spotlight' function, I had to do multiple calculations in order to find out the radius of the circle and checking whether the current pixel is within the range of the circle or not. To put it simply, I calculated the distance between the current pixel position and the middle of the frame using the pythagorean theorem. And if that distance is greater than the radius of the circle, then I set all the RGB values at that pixel to 0. 
+For the 'CropImageList' function, I had to delete the entries that were not in between 'start' and 'end'. I had to be careful not to delete the wrong entry, or leaving any memories unfree'd. In order to delete the entries, I had to make two temporary pointers and work with them for each entry. 
+For the 'FastImageList' function, it was pretty similar to the 'CropImage' function. I just had to make sure that I am deleting the correct frames.
+For the 'ReverseImage' function, I simply used two temporary pointers and just switched the 'Next' and 'Prev' pointers. 
+For the 'RGB2YUVMovie' and 'YUV2RGBMovie' functions, the most important part was freeing the memories of either RGBImage or YUVImage, depending on what I need to free. 
+I also implemented 'DeleteImageEntry' and 'DeleteImageFirstEntry' functions separately, because they were used multiple times. 'DeleteImageEntry' deletes the entry that has been passed into this function. 'DeleteImageFirstEntry' deletes the first entry of that list, and returns a pointer to the next entry. 
+In the main function in MovieLab.c file, I had to put a 'while' loop to read the command line arguments for each function calls, to make sure that the functions were operating in the correct order listed in the pdf. 
